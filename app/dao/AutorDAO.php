@@ -37,4 +37,3 @@ class AutorDAO {
         $stmt->execute([$id]);
     }
 }
-?>

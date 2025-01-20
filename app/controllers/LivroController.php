@@ -12,6 +12,7 @@ class LivroController {
         $this->autorDAO = new AutorDAO();
     }
 
+    //se não informar nenhum método, o index é chamado
     public function index() {
         $livros = $this->livroDAO->findAll();
         include __DIR__ . '/../views/livro/index.php';

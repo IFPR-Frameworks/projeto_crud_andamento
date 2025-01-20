@@ -9,9 +9,10 @@
 
 <!-- app/views/autor/create.php -->
 <h1>Novo Autor</h1>
+
 <form action="http://localhost/Frameworks/projeto-crud/AutorController/store" method="post">
     <label>Nome: </label>
-    <input type="text" name="nome">
+    <input type="text" name="campo_nome_autor">
     <button type="submit">Salvar</button>
 </form>
 

@@ -15,8 +15,13 @@ class AutorController {
         include __DIR__ . '/../views/autor/index.php';
     }
 
-    public function show($id) {
+    public function show() {
+
+        //.../AutorController/show/?id=1
+        $id = $_GET['id'];//1 
+
         $autor = $this->autorDAO->findById($id);
+
         include __DIR__ . '/../views/autor/show.php';
     }
 
@@ -24,9 +29,10 @@ class AutorController {
         include __DIR__ . '/../views/autor/create.php';
     }
 
-    public function store($nome) {
+    public function store() {
 
-        $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+        //$nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+        $nome = $_POST['campo_nome_autor'];
 
         $autor = new Autor();
         $autor->setNome($nome);
@@ -61,4 +67,5 @@ class AutorController {
         header("location: http://localhost/Frameworks/projeto-crud/AutorController");
 
     }
+
 }

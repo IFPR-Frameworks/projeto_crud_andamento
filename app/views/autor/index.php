@@ -22,7 +22,7 @@
         <?php foreach ($autores as $autor): ?>
             <tr>
                 <td><?= $autor->getId(); ?></td>
-                <td><?= $autor->getNome(); ?></td>
+                <td><a href="http://localhost/Frameworks/projeto-crud/AutorController/show/?id=<?= $autor->getId(); ?>"><?= $autor->getNome(); ?></a></td>
                 <td>
                     <a href="http://localhost/Frameworks/projeto-crud/AutorController/edit?id=<?= $autor->getId(); ?>">Editar</a>
                     <a href="http://localhost/Frameworks/projeto-crud/AutorController/delete?id=<?= $autor->getId(); ?>">Excluir</a>
