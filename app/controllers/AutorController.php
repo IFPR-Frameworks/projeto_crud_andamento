@@ -1,10 +1,12 @@
 <?php
 
-require __DIR__ . '/../dao/AutorDAO.php';
+require_once __DIR__ . '/../dao/AutorDAO.php';
+require_once __DIR__ . '/../../config.php';
 
 class AutorController {
 
     private $autorDAO;
+    private $base_url = BASE_URL;
 
     public function __construct() {
         $this->autorDAO = new AutorDAO();
@@ -37,7 +39,7 @@ class AutorController {
         $autor = new Autor();
         $autor->setNome($nome);
         $this->autorDAO->create($autor);
-        header("location: http://localhost/Frameworks/projeto-crud/AutorController");
+        header("location: {$this->base_url}/AutorController");
     }
 
     public function edit($id) {
@@ -56,7 +58,7 @@ class AutorController {
         $autor->setId($id);
         $autor->setNome($nome);
         $this->autorDAO->update($autor);
-        header("location: http://localhost/Frameworks/projeto-crud/AutorController");
+        header("location: {$this->base_url}/AutorController");
     }
 
     public function delete() {
@@ -64,7 +66,7 @@ class AutorController {
         $id = $_GET['id'];
 
         $this->autorDAO->delete($id);
-        header("location: http://localhost/Frameworks/projeto-crud/AutorController");
+        header("location: {$this->base_url}/AutorController");
 
     }
 

@@ -1,12 +1,14 @@
 <?php
 
+require_once __DIR__ . '/../../config.php';
+
 class Database
 {
 
     private $host = 'localhost';
-    private $dbname = 'biblioteca_crud';
-    private $user = 'root';
-    private $pass = 'bancodedados';
+    private $dbname = DATABASE_NAME;
+    private $user   = DATABASE_USER;
+    private $pass   = DATABASE_PASSWORD;
 
     public function getConnection()
     {
